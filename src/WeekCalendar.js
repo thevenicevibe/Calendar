@@ -99,7 +99,7 @@ const WeekCalendar = () => {
         <Button type="button" className="btn-prev" onClick={handlePreviousWeek}>
           Previous Week
         </Button>
-        <h5> {currentWeek.toDateString()}</h5>
+        <h5 style={{color: "#888888",}}> {currentWeek.toDateString()}</h5>
         <Button type="button" className="btn-next" onClick={handleNextWeek}>
           Next Week
         </Button>
@@ -142,7 +142,7 @@ const WeekCalendar = () => {
                   </td>
                   {/* const timeString = date.toLocaleTimeString('en-US', { hour12: true, hour: 'numeric', minute: 'numeric' }) */}
 
-                  <div style={{width:"100%",flexDirection:"row",display:"flex", flexWrap:"wrap",padding:"10px"}}>{times.map((time) => (
+                  <div style={{width:"100%",flexDirection:"row",display:"flex", flexWrap:"wrap",padding:"10px",color: "#888888",}}>{times.map((time) => (
                     // <div className="setTime">
                       
                     // </div>
