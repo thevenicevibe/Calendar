@@ -123,13 +123,14 @@ const WeekCalendar = () => {
             {daysOfWeek.map((day) => (
               <>
                 <tr>
-                  <td
+                  <td 
                     key={day.name}
                     style={{ color: "#AB0000", fontSize: "16px", padding:"5px"}}
                   >
                     {day.name}
                     <td
                       className="td-sub"
+                      
                       key={day.date.toDateString()}
                       style={{
                         fontSize: "14px",
@@ -140,21 +141,10 @@ const WeekCalendar = () => {
                       {moment(day.date.toDateString()).format("M/DD")}
                     </td>
                   </td>
-                  {/* const timeString = date.toLocaleTimeString('en-US', { hour12: true, hour: 'numeric', minute: 'numeric' }) */}
-
+                
+                  {moment(day.date.toDateString()).isBefore(currentWeek.toDateString())?<td style={{padding:"15px",color: "#888888"}}>Past</td>: 
                   <div style={{width:"100%",flexDirection:"row",display:"flex", flexWrap:"wrap",padding:"10px",color: "#888888",}}>{times.map((time) => (
-                    // <div className="setTime">
-                      
-                    // </div>
-                    // <td
-                    //   className="table-head"
-                    //   style={{
-                    //     width: 200,
-                    //     fontSize: "14px",
-                    //     color: "#888888",
-                    //     fontWeight: "500",
-                    //   }}
-                    // >
+                    
 
                     <tr key={time} className="tr-sub" style={{padding:"5px"}}>
                         
@@ -166,7 +156,7 @@ const WeekCalendar = () => {
                       </tr> 
                     // </td>
                   ))}</div>
-                  
+                      }
 
                 </tr>
               </>
@@ -175,6 +165,7 @@ const WeekCalendar = () => {
         </tbody>
       </Table>
     </div>
+    
   );
 };
 
